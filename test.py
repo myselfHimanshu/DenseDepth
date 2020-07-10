@@ -5,7 +5,7 @@ from utils import load_images
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '5'
 from keras.models import load_model
 from layers import BilinearUpSampling2D
-from utils import predict
+from utils import predict_
 
 def return_output(model_path, images_list):
     # Custom object needed for inference and training
@@ -23,7 +23,7 @@ def return_output(model_path, images_list):
     print('\nLoaded ({0}) images of size {1}.'.format(inputs.shape[0], inputs.shape[1:]))
 
     # Compute results
-    outputs = predict(model, inputs)
+    outputs = predict_(model, inputs)
 
     print('\nOutput ({0}) images of size {1}.'.format(outputs.shape[0], outputs.shape[1:]))
 
