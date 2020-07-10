@@ -27,3 +27,5 @@ def return_output(model_path, images_list):
 
     print('\nOutput ({0}) images of size {1}.'.format(outputs.shape[0], outputs.shape[1:]))
 
+    return outputs
+

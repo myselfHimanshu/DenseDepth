@@ -1,5 +1,6 @@
 import numpy as np
 from PIL import Image
+import cv2
 
 def DepthNorm(x, maxDepth):
     return maxDepth / x
@@ -25,9 +26,13 @@ def scale_up(scale, images):
     return np.stack(scaled)
 
 def load_images(image_list):
+    from skimage.transform import resize
+
     loaded_images = []
+    shape = (448,448)
     for file in image_list:
-        x = np.clip(file / 255, 0, 1)
+        file = resize(file, shape, preserve_range=True, mode='reflect', anti_aliasing=True )
+        x = np.clip(file.resize() / 255, 0, 1)
         loaded_images.append(x)
     return np.stack(loaded_images, axis=0)
 
