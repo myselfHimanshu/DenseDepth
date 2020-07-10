@@ -1,4 +1,5 @@
 import os
+from utils import load_images
 
 # Keras / TensorFlow
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '5'
@@ -18,7 +19,7 @@ def return_output(model_path, images_list):
     print('\nModel loaded ({0}).'.format(model_path))
 
     # Input images
-    inputs = images_list
+    inputs = load_images(images_list)
     print('\nLoaded ({0}) images of size {1}.'.format(inputs.shape[0], inputs.shape[1:]))
 
     # Compute results

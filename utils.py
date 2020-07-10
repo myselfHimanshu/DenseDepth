@@ -24,10 +24,10 @@ def scale_up(scale, images):
 
     return np.stack(scaled)
 
-def load_images(image_files):
+def load_images(image_list):
     loaded_images = []
-    for file in image_files:
-        x = np.clip(np.asarray(Image.open( file ), dtype=float) / 255, 0, 1)
+    for file in image_list:
+        x = np.clip(np.asarray(file, dtype=float) / 255, 0, 1)
         loaded_images.append(x)
     return np.stack(loaded_images, axis=0)
 
