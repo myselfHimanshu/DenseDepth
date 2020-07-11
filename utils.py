@@ -31,9 +31,7 @@ def load_images(image_list):
     loaded_images = np.empty((len(image_list), 448, 448, 3), dtype=np.float16)
     shape = (448,448)
     for i,file in enumerate(image_list):
-        file = resize(file, shape, preserve_range=True, mode='reflect', anti_aliasing=True )
-        x = np.clip(file / 255, 0, 1)
-        loaded_images[i,...] = x
+        loaded_images[i,...] = np.clip((resize(file, shape, preserve_range=True, mode='reflect', anti_aliasing=True )) / 255, 0, 1)
     return loaded_images
 
 def to_multichannel(i):
