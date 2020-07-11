@@ -1,5 +1,6 @@
 import os
 from utils import load_images
+import numpy as np
 
 # Keras / TensorFlow
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '5'
