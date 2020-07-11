@@ -11,7 +11,7 @@ from utils import predict_
 custom_objects = {'BilinearUpSampling2D': BilinearUpSampling2D, 'depth_loss_function': None}
 
 # Load model into GPU / CPU
-model_path = "./DenseDepth/nyu.h5"
+model_path = "./nyu.h5"
 model = load_model(model_path, custom_objects=custom_objects, compile=False)
 
 def return_output(images_list):    
