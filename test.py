@@ -20,7 +20,7 @@ def return_output(images_list):
     print('\nLoaded ({0}) images of size {1}.'.format(inputs.shape[0], inputs.shape[1:]))
 
     # Compute results
-    outputs = predict_(model, inputs)
+    outputs = predict_(model, inputs, batch_size=1)
 
     print('\nOutput ({0}) images of size {1}.'.format(outputs.shape[0], outputs.shape[1:]))
 
