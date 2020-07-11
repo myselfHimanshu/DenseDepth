@@ -14,13 +14,13 @@ custom_objects = {'BilinearUpSampling2D': BilinearUpSampling2D, 'depth_loss_func
 model_path = "./nyu.h5"
 model = load_model(model_path, custom_objects=custom_objects, compile=False)
 
-def return_output(images_list):    
+def return_output(images_list, batch_size):    
     # Input images
     inputs = load_images(images_list)
     print('\nLoaded ({0}) images of size {1}.'.format(inputs.shape[0], inputs.shape[1:]))
 
     # Compute results
-    outputs = predict_(model, inputs, batch_size=1)
+    outputs = predict_(model, inputs, batch_size=batch_size)
 
     print('\nOutput ({0}) images of size {1}.'.format(outputs.shape[0], outputs.shape[1:]))
 
