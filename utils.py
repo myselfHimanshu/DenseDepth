@@ -34,7 +34,7 @@ def load_images(image_list):
         file = resize(file, shape, preserve_range=True, mode='reflect', anti_aliasing=True )
         x = np.clip(file / 255, 0, 1)
         loaded_images[i,...] = x
-    return load_images
+    return loaded_images
 
 def to_multichannel(i):
     if i.shape[2] == 3: return i
