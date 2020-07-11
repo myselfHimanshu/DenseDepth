@@ -24,7 +24,7 @@ def return_output(images_list, batch_size):
         inputs = load_images(images_list[i*batch_size:(i+1)*batch_size])
         # Input images
         print('\nLoaded ({0}) images of size {1}.'.format(inputs.shape[0], inputs.shape[1:]))
-        outputs[i*batch_size:(i+1)*batch_size,...] = predict_(model, inputs[i*batch_size:(i+1)*batch_size], batch_size=batch_size)
+        outputs[i*batch_size:(i+1)*batch_size,...] = predict_(model, inputs[i*batch_size:(i+1)*batch_size])
 
     print('\nOutput ({0}) images of size {1}.'.format(outputs.shape[0], outputs.shape[1:]))
 
